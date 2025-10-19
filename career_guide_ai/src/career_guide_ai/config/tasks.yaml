@@ -1,0 +1,53 @@
+analyze_task:
+  description: >
+    Analyze the user's bio and extract structured information about their
+    interests, skills, experiences, and professional background. The bio may include
+    education, work experience, hobbies, and goals — summarize and organize this information clearly.
+  expected_output: >
+    A JSON object with this format:
+    {
+      "interests": ["interest1", "interest2"],
+      "skills": ["skill1", "skill2"],
+      "background": "short professional summary"
+    }
+  agent: interest_analyzer
+
+recommend_task:
+  description: >
+    Using the structured analysis of the user's bio, recommend the top 3 career paths
+    that align best with their interests, skills, experiences, and overall background.
+    Consider both technical and creative aspects if applicable.
+  expected_output: >
+    A JSON array with this format:
+    [
+      {"career": "Career Name 1", "reason": "1-line reason"},
+      {"career": "Career Name 2", "reason": "1-line reason"},
+      {"career": "Career Name 3", "reason": "1-line reason"}
+    ]
+  agent: career_recommender
+
+roadmap_task:
+  description: >
+    For each of the 3 recommended careers derived from the user's bio analysis,
+    generate a clear 10-step roadmap explaining how the user can start and grow in that career.
+    Each step should be concise, actionable, and relevant to the user’s background, skills, and goals.
+  expected_output: >
+    A JSON array with this format:
+    [
+      {
+        "career": "Career Name 1",
+        "roadmap": [
+          "Step 1", "Step 2", ..., "Step 10"
+        ]
+      },
+      {
+        "career": "Career Name 2",
+        "roadmap": [...]
+      },
+      {
+        "career": "Career Name 3",
+        "roadmap": [...]
+      }
+    ]
+  agent: roadmap_generator
+  
