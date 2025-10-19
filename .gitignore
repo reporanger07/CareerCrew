@@ -1,0 +1,12 @@
+# Node and frontend junk
+frontend/node_modules/
+frontend/.next/
+frontend/.env
+
+# Python and backend junk
+career_guide_ai/__pycache__/
+career_guide_ai/.env
+
+# System
+.DS_Store
+.env
